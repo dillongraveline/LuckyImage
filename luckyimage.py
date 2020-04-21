@@ -3,6 +3,7 @@ import os
 import fire
 from bs4 import BeautifulSoup
 import shutil
+import random
 
 def search(s='cats'):
 
@@ -22,7 +23,8 @@ def search(s='cats'):
             list.append(image['src'])
         except:
             pass
-    url = list[2]
+    rand = random.randint(1,10)
+    url = list[rand]
     image = requests.get(url, stream=True)
     with open(f'{download}/{s}.jpg', 'wb') as f:
         image.raw.decode_content=True
