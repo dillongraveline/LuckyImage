@@ -9,7 +9,7 @@ def search(s='cats'):
     download = os.path.expanduser('~')
     download = f'{download}/Downloads/'
 
-    searchterm = s.replace(' ','%20')
+    searchterm = s.replace('_','%20')
 
     image = requests.get(f'https://www.google.com/search?tbm=isch&q={searchterm}')
     content = image.text
