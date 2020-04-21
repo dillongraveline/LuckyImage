@@ -23,7 +23,7 @@ def search(s='cats'):
             list.append(image['src'])
         except:
             pass
-    rand = random.randint(1,10)
+    rand = random.randint(1,3)
     url = list[rand]
     image = requests.get(url, stream=True)
     with open(f'{download}/{s}.jpg', 'wb') as f:
